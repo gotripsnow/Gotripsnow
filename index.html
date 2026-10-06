@@ -1,0 +1,1254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Go Trips Now | Travel. Explore. Experience.</title>
+
+<meta name="description" content="Go Trips Now - Treks, holidays, customized tours, group trips, corporate travel, flights and visa assistance across India and the world.">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #172033;
+    background: #ffffff;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* NAVIGATION */
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(255,255,255,0.96);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+}
+
+.nav-inner {
+    height: 75px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: 800;
+    color: #087f8c;
+    letter-spacing: -1px;
+}
+
+.logo span {
+    color: #ff7a00;
+}
+
+.nav-links {
+    display: flex;
+    gap: 25px;
+    align-items: center;
+}
+
+.nav-links a {
+    font-size: 14px;
+    font-weight: 600;
+    color: #263248;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #087f8c;
+}
+
+.nav-button {
+    background: #ff7a00;
+    color: white !important;
+    padding: 11px 18px;
+    border-radius: 25px;
+}
+
+/* HERO */
+
+.hero {
+    min-height: 720px;
+    padding-top: 75px;
+    display: flex;
+    align-items: center;
+    background:
+        linear-gradient(90deg, rgba(3,30,38,0.85), rgba(3,30,38,0.25)),
+        url("https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=2000&q=85");
+    background-size: cover;
+    background-position: center;
+    color: white;
+}
+
+.hero-content {
+    max-width: 720px;
+}
+
+.hero-tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.35);
+    padding: 8px 15px;
+    border-radius: 30px;
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+.hero h1 {
+    font-size: clamp(45px, 7vw, 82px);
+    line-height: 1.02;
+    margin-bottom: 25px;
+    letter-spacing: -3px;
+}
+
+.hero h1 span {
+    color: #ff9a3d;
+}
+
+.hero p {
+    font-size: 19px;
+    max-width: 620px;
+    color: #edf7f8;
+    margin-bottom: 35px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    display: inline-block;
+    padding: 14px 25px;
+    border-radius: 30px;
+    font-weight: 700;
+    transition: 0.3s;
+}
+
+.btn-primary {
+    background: #ff7a00;
+    color: white;
+}
+
+.btn-primary:hover {
+    background: #e86600;
+    transform: translateY(-2px);
+}
+
+.btn-light {
+    background: white;
+    color: #087f8c;
+}
+
+.btn-light:hover {
+    transform: translateY(-2px);
+}
+
+/* SECTIONS */
+
+section {
+    padding: 90px 0;
+}
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.section-heading .small {
+    color: #ff7a00;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 13px;
+}
+
+.section-heading h2 {
+    font-size: 42px;
+    margin: 10px 0;
+    color: #172033;
+}
+
+.section-heading p {
+    max-width: 650px;
+    margin: auto;
+    color: #667085;
+}
+
+/* DESTINATIONS */
+
+.destinations {
+    background: #f7fbfc;
+}
+
+.destination-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.destination-card {
+    height: 310px;
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+    color: white;
+    background-size: cover;
+    background-position: center;
+    transition: 0.35s;
+}
+
+.destination-card:hover {
+    transform: translateY(-7px);
+}
+
+.destination-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(transparent 30%, rgba(0,0,0,0.8));
+}
+
+.destination-content {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    z-index: 2;
+}
+
+.destination-content h3 {
+    font-size: 25px;
+}
+
+/* TREKS */
+
+.treks {
+    background: white;
+}
+
+.trek-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.trek-card {
+    border-radius: 18px;
+    overflow: hidden;
+    background: white;
+    box-shadow: 0 10px 35px rgba(0,0,0,0.09);
+    transition: 0.3s;
+}
+
+.trek-card:hover {
+    transform: translateY(-6px);
+}
+
+.trek-image {
+    height: 220px;
+    background-size: cover;
+    background-position: center;
+}
+
+.trek-info {
+    padding: 22px;
+}
+
+.trek-info h3 {
+    margin-bottom: 8px;
+    font-size: 21px;
+}
+
+.trek-info p {
+    color: #667085;
+    font-size: 14px;
+}
+
+/* SERVICES */
+
+.services {
+    background: #f7fbfc;
+}
+
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.service-card {
+    padding: 30px 22px;
+    background: white;
+    border-radius: 18px;
+    text-align: center;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.05);
+    transition: 0.3s;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+}
+
+.service-icon {
+    font-size: 38px;
+    margin-bottom: 15px;
+}
+
+.service-card h3 {
+    margin-bottom: 8px;
+}
+
+.service-card p {
+    font-size: 14px;
+    color: #667085;
+}
+
+/* FEATURE */
+
+.feature {
+    background: #073b44;
+    color: white;
+}
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.feature h2 {
+    font-size: 45px;
+    line-height: 1.1;
+    margin: 12px 0 20px;
+}
+
+.feature p {
+    color: #c8e0e3;
+    margin-bottom: 25px;
+}
+
+.check-list {
+    list-style: none;
+}
+
+.check-list li {
+    margin: 12px 0;
+    color: #e9f8f9;
+}
+
+.check-list li::before {
+    content: "✓";
+    color: #ff9a3d;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.feature-image {
+    min-height: 440px;
+    border-radius: 25px;
+    background:
+        url("https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=1200&q=85")
+        center/cover;
+}
+
+/* INTERNATIONAL */
+
+.international {
+    background: white;
+}
+
+.international-grid {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 20px;
+}
+
+.international-card {
+    min-height: 240px;
+    border-radius: 18px;
+    padding: 25px;
+    display: flex;
+    align-items: flex-end;
+    color: white;
+    position: relative;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+}
+
+.international-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(transparent, rgba(0,0,0,0.75));
+}
+
+.international-card div {
+    position: relative;
+    z-index: 2;
+}
+
+.international-card h3 {
+    font-size: 27px;
+}
+
+/* WHY US */
+
+.why {
+    background: #f7fbfc;
+}
+
+.why-grid {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 25px;
+}
+
+.why-card {
+    padding: 30px;
+    background: white;
+    border-radius: 18px;
+    border: 1px solid #e7eef0;
+}
+
+.why-card h3 {
+    margin: 12px 0 8px;
+}
+
+/* CTA */
+
+.cta {
+    padding: 80px 20px;
+    text-align: center;
+    background:
+        linear-gradient(rgba(3,54,62,0.92), rgba(3,54,62,0.92)),
+        url("https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1800&q=85")
+        center/cover;
+    color: white;
+}
+
+.cta h2 {
+    font-size: 48px;
+    margin-bottom: 15px;
+}
+
+.cta p {
+    max-width: 650px;
+    margin: 0 auto 30px;
+    color: #d7edef;
+}
+
+/* CONTACT */
+
+.contact {
+    background: white;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+}
+
+.contact-info h2 {
+    font-size: 40px;
+    margin-bottom: 15px;
+}
+
+.contact-info p {
+    color: #667085;
+    margin-bottom: 25px;
+}
+
+.contact-item {
+    margin: 18px 0;
+}
+
+.contact-item strong {
+    display: block;
+    color: #087f8c;
+}
+
+form {
+    background: #f7fbfc;
+    padding: 30px;
+    border-radius: 20px;
+}
+
+input, textarea, select {
+    width: 100%;
+    padding: 14px;
+    margin-bottom: 15px;
+    border: 1px solid #d9e2e5;
+    border-radius: 10px;
+    font-family: inherit;
+    font-size: 15px;
+}
+
+textarea {
+    height: 120px;
+    resize: vertical;
+}
+
+button {
+    border: none;
+    cursor: pointer;
+}
+
+/* FOOTER */
+
+footer {
+    background: #071f24;
+    color: white;
+    padding: 50px 0 25px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 50px;
+}
+
+footer h3 {
+    margin-bottom: 15px;
+}
+
+footer p {
+    color: #a9c3c7;
+    font-size: 14px;
+}
+
+.footer-links {
+    list-style: none;
+}
+
+.footer-links li {
+    margin: 8px 0;
+    color: #b8ced1;
+}
+
+.copyright {
+    border-top: 1px solid #234147;
+    margin-top: 35px;
+    padding-top: 20px;
+    text-align: center;
+    color: #89a8ad;
+    font-size: 13px;
+}
+
+/* WHATSAPP */
+
+.whatsapp {
+    position: fixed;
+    right: 22px;
+    bottom: 22px;
+    background: #25d366;
+    color: white;
+    width: 58px;
+    height: 58px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 27px;
+    z-index: 999;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+}
+
+/* MOBILE */
+
+@media (max-width: 900px) {
+
+    .nav-links {
+        display: none;
+    }
+
+    .destination-grid,
+    .service-grid {
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    .trek-grid,
+    .international-grid,
+    .why-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .feature-grid,
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .feature-image {
+        min-height: 300px;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .destination-grid,
+    .service-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero {
+        min-height: 650px;
+    }
+
+    .hero h1 {
+        font-size: 50px;
+    }
+
+    .section-heading h2 {
+        font-size: 34px;
+    }
+
+    .cta h2 {
+        font-size: 36px;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+
+<nav>
+<div class="container nav-inner">
+
+<div class="logo">
+Go Trips <span>Now</span>
+</div>
+
+<div class="nav-links">
+<a href="#home">Home</a>
+<a href="#destinations">Destinations</a>
+<a href="#treks">Treks</a>
+<a href="#services">Services</a>
+<a href="#about">About</a>
+<a href="#contact" class="nav-button">Plan My Trip</a>
+</div>
+
+</div>
+</nav>
+
+
+<!-- HERO -->
+
+<section class="hero" id="home">
+
+<div class="container">
+
+<div class="hero-content">
+
+<div class="hero-tag">
+✈️ Travel • Explore • Experience
+</div>
+
+<h1>
+Your journey<br>
+starts <span>now.</span>
+</h1>
+
+<p>
+Discover breathtaking destinations, unforgettable treks,
+customized holidays and experiences designed around you.
+</p>
+
+<div class="hero-buttons">
+
+<a href="#destinations" class="btn btn-primary">
+Explore Destinations
+</a>
+
+<a href="#contact" class="btn btn-light">
+Plan My Trip
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- DESTINATIONS -->
+
+<section class="destinations" id="destinations">
+
+<div class="container">
+
+<div class="section-heading">
+
+<div class="small">Explore India</div>
+
+<h2>Where will you go next?</h2>
+
+<p>
+From the Himalayas to tropical beaches, discover incredible
+places across India with Go Trips Now.
+</p>
+
+</div>
+
+<div class="destination-grid">
+
+<div class="destination-card"
+style="background-image:url('https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?auto=format&fit=crop&w=800&q=80')">
+
+<div class="destination-content">
+<h3>Goa</h3>
+<p>Beaches • Adventure • Experiences</p>
+</div>
+
+</div>
+
+<div class="destination-card"
+style="background-image:url('https://images.unsplash.com/photo-1518005020951-eccb494ad742?auto=format&fit=crop&w=800&q=80')">
+
+<div class="destination-content">
+<h3>Rajasthan</h3>
+<p>Heritage • Culture • Royal India</p>
+</div>
+
+</div>
+
+<div class="destination-card"
+style="background-image:url('https://images.unsplash.com/photo-1532664189809-02133fee698d?auto=format&fit=crop&w=800&q=80')">
+
+<div class="destination-content">
+<h3>Kashmir</h3>
+<p>Mountains • Lakes • Paradise</p>
+</div>
+
+</div>
+
+<div class="destination-card"
+style="background-image:url('https://images.unsplash.com/photo-1524492412937-b28074a5d7da?auto=format&fit=crop&w=800&q=80')">
+
+<div class="destination-content">
+<h3>North India</h3>
+<p>Culture • History • Adventure</p>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- TREKS -->
+
+<section class="treks" id="treks">
+
+<div class="container">
+
+<div class="section-heading">
+
+<div class="small">Adventure Awaits</div>
+
+<h2>Treks & Adventures</h2>
+
+<p>
+Experience India's mountains and wilderness with unforgettable
+trekking adventures.
+</p>
+
+</div>
+
+<div class="trek-grid">
+
+<div class="trek-card">
+
+<div class="trek-image"
+style="background-image:url('https://images.unsplash.com/photo-1464278533981-50106e6176b1?auto=format&fit=crop&w=900&q=80')">
+</div>
+
+<div class="trek-info">
+<h3>Ladakh</h3>
+<p>High-altitude landscapes, monasteries and unforgettable mountain journeys.</p>
+</div>
+
+</div>
+
+<div class="trek-card">
+
+<div class="trek-image"
+style="background-image:url('https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=900&q=80')">
+</div>
+
+<div class="trek-info">
+<h3>Himachal Pradesh</h3>
+<p>Mountain trails, valleys and adventure experiences in the Himalayas.</p>
+</div>
+
+</div>
+
+<div class="trek-card">
+
+<div class="trek-image"
+style="background-image:url('https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=900&q=80')">
+</div>
+
+<div class="trek-info">
+<h3>Uttarakhand</h3>
+<p>Discover spectacular Himalayan trails and nature-filled adventures.</p>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- SERVICES -->
+
+<section class="services" id="services">
+
+<div class="container">
+
+<div class="section-heading">
+
+<div class="small">Travel Made Simple</div>
+
+<h2>Everything you need to travel</h2>
+
+<p>
+From planning your holiday to getting there, Go Trips Now
+helps make your journey simple.
+</p>
+
+</div>
+
+<div class="service-grid">
+
+<div class="service-card">
+<div class="service-icon">🧳</div>
+<h3>Customized Tours</h3>
+<p>Build a journey around your interests, schedule and budget.</p>
+</div>
+
+<div class="service-card">
+<div class="service-icon">👥</div>
+<h3>Group Trips</h3>
+<p>Meet new people and experience unforgettable group journeys.</p>
+</div>
+
+<div class="service-card">
+<div class="service-icon">💼</div>
+<h3>Corporate Trips</h3>
+<p>Weekend getaways and travel experiences for corporate teams.</p>
+</div>
+
+<div class="service-card">
+<div class="service-icon">✈️</div>
+<h3>Flights</h3>
+<p>Get assistance with your flight planning and bookings.</p>
+</div>
+
+<div class="service-card">
+<div class="service-icon">🛂</div>
+<h3>Visa Assistance</h3>
+<p>Travel support for international visa requirements.</p>
+</div>
+
+<div class="service-card">
+<div class="service-icon">👨‍👩‍👧‍👦</div>
+<h3>Family Travel</h3>
+<p>Comfortable and memorable holidays designed for families.</p>
+</div>
+
+<div class="service-card">
+<div class="service-icon">🏕️</div>
+<h3>Weekend Trips</h3>
+<p>Short escapes for when you need a break from everyday life.</p>
+</div>
+
+<div class="service-card">
+<div class="service-icon">🌍</div>
+<h3>Strangers Trips</h3>
+<p>Travel with new people and come back with new stories.</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- FEATURE -->
+
+<section class="feature" id="about">
+
+<div class="container feature-grid">
+
+<div>
+
+<div class="small">Why Go Trips Now</div>
+
+<h2>
+Don't just visit places.<br>
+Experience them.
+</h2>
+
+<p>
+Whether you're looking for a peaceful family holiday,
+an adventurous trek, a group journey or a completely
+customized international trip, we're here to help you
+plan it.
+</p>
+
+<ul class="check-list">
+<li>Customized travel experiences</li>
+<li>Domestic & international destinations</li>
+<li>Adventure and trekking experiences</li>
+<li>Group and corporate travel</li>
+<li>Flight and visa assistance</li>
+</ul>
+
+</div>
+
+<div class="feature-image"></div>
+
+</div>
+
+</section>
+
+
+<!-- INTERNATIONAL -->
+
+<section class="international">
+
+<div class="container">
+
+<div class="section-heading">
+
+<div class="small">Go Beyond India</div>
+
+<h2>Explore the world</h2>
+
+<p>
+Your next adventure could be closer than you think — or
+on the other side of the world.
+</p>
+
+</div>
+
+<div class="international-grid">
+
+<div class="international-card"
+style="background-image:url('https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=900&q=80')">
+
+<div>
+<h3>Vietnam</h3>
+<p>Culture • Nature • Adventure</p>
+</div>
+
+</div>
+
+<div class="international-card"
+style="background-image:url('https://images.unsplash.com/photo-1528181304800-259b08848526?auto=format&fit=crop&w=900&q=80')">
+
+<div>
+<h3>Thailand</h3>
+<p>Beaches • Islands • Experiences</p>
+</div>
+
+</div>
+
+<div class="international-card"
+style="background-image:url('https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=900&q=80')">
+
+<div>
+<h3>Japan</h3>
+<p>Tradition • Technology • Culture</p>
+</div>
+
+</div>
+
+<div class="international-card"
+style="background-image:url('https://images.unsplash.com/photo-1518684079-3c830dcef090?auto=format&fit=crop&w=900&q=80')">
+
+<div>
+<h3>Dubai</h3>
+<p>Luxury • Adventure • City Life</p>
+</div>
+
+</div>
+
+<div class="international-card"
+style="background-image:url('https://images.unsplash.com/photo-1583499871880-de841d1ace2a?auto=format&fit=crop&w=900&q=80')">
+
+<div>
+<h3>Sri Lanka</h3>
+<p>Nature • Beaches • Culture</p>
+</div>
+
+</div>
+
+<div class="international-card"
+style="background-image:url('https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=900&q=80')">
+
+<div>
+<h3>More of the World</h3>
+<p>Tell us where you want to go.</p>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- WHY US -->
+
+<section class="why">
+
+<div class="container">
+
+<div class="section-heading">
+
+<div class="small">Travel With Confidence</div>
+
+<h2>Why choose Go Trips Now?</h2>
+
+</div>
+
+<div class="why-grid">
+
+<div class="why-card">
+<div class="service-icon">🎯</div>
+<h3>Personalized</h3>
+<p>
+Your trip should feel like yours. We create travel experiences
+around your needs and interests.
+</p>
+</div>
+
+<div class="why-card">
+<div class="service-icon">🌎</div>
+<h3>India & Beyond</h3>
+<p>
+Explore destinations across India and discover incredible
+international experiences.
+</p>
+</div>
+
+<div class="why-card">
+<div class="service-icon">💙</div>
+<h3>Travel Made Easy</h3>
+<p>
+From planning to flights and visa assistance, we're here
+to make your journey easier.
+</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- CTA -->
+
+<section class="cta">
+
+<h2>Ready to go?</h2>
+
+<p>
+Tell us where you want to go, and we'll help you turn
+your travel idea into a real journey.
+</p>
+
+<a href="#contact" class="btn btn-primary">
+Plan My Trip
+</a>
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section class="contact" id="contact">
+
+<div class="container contact-grid">
+
+<div class="contact-info">
+
+<div class="small">Let's Talk</div>
+
+<h2>Plan your next adventure.</h2>
+
+<p>
+Have a destination in mind? Looking for a customized trip?
+Send us your requirements and our team will get in touch.
+</p>
+
+<div class="contact-item">
+<strong>📞 Phone</strong>
+<span>Coming Soon</span>
+</div>
+
+<div class="contact-item">
+<strong>📧 Email</strong>
+<span>Coming Soon</span>
+</div>
+
+<div class="contact-item">
+<strong>📍 Location</strong>
+<span>India</span>
+</div>
+
+</div>
+
+
+<form>
+
+<h3>Tell us about your trip</h3>
+
+<br>
+
+<input type="text" placeholder="Your Name">
+
+<input type="email" placeholder="Email Address">
+
+<input type="tel" placeholder="Phone Number">
+
+<select>
+<option>Select Travel Type</option>
+<option>Family Travel</option>
+<option>Customized Tour</option>
+<option>Group Trip</option>
+<option>Corporate Trip</option>
+<option>Weekend Trip</option>
+<option>Trek / Adventure</option>
+<option>International Tour</option>
+</select>
+
+<textarea placeholder="Where would you like to go?"></textarea>
+
+<button type="button" class="btn btn-primary">
+Send Enquiry
+</button>
+
+</form>
+
+</div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+<div class="container">
+
+<div class="footer-grid">
+
+<div>
+
+<div class="logo">
+Go Trips <span>Now</span>
+</div>
+
+<br>
+
+<p>
+Travel. Explore. Experience.
+
+Your journey starts now.
+</p>
+
+</div>
+
+<div>
+
+<h3>Explore</h3>
+
+<ul class="footer-links">
+<li><a href="#destinations">Destinations</a></li>
+<li><a href="#treks">Treks</a></li>
+<li><a href="#services">Services</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+
+</div>
+
+<div>
+
+<h3>Travel With Us</h3>
+
+<ul class="footer-links">
+<li>Customized Tours</li>
+<li>Group Trips</li>
+<li>Corporate Travel</li>
+<li>Flights & Visa</li>
+</ul>
+
+</div>
+
+</div>
+
+<div class="copyright">
+© 2026 Go Trips Now. All rights reserved.
+</div>
+
+</div>
+
+</footer>
+
+
+<!-- WHATSAPP -->
+
+<a class="whatsapp" href="#" title="WhatsApp">
+💬
+</a>
+
+</body>
+</html>
