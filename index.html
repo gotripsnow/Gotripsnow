@@ -69,13 +69,7 @@ footer p{opacity:.8;margin-top:8px}
   .hero{min-height:560px}
   .checks{grid-template-columns:1fr}
   section{padding:60px 0}
-.logo img {
-  height: 50px;
-  width: auto;
-  max-width: 220px;
-  object-fit: contain;
-  display: block;
-}
+.site-logo { height: 50px; width: auto; max-width: 220px; object-fit: contain; display: block; }
 </style>
 </head>
 
@@ -117,9 +111,11 @@ const SITE = {
 </script>
 
 <header>
-  <div class="container nav">
+  ```html
+<div class="container nav">
+  <a href="#home" class="logo">
     <img src="Gotripsnow%20logo.png" alt="Go Trips Now" class="site-logo">
-</a>
+  </a>
     <nav>
       <a href="#home">Home</a>
       <a href="#destinations">Destinations</a>
